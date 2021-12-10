@@ -50,7 +50,7 @@ optional arguments:
 
 ## Give It a Try
 
-If you want make your own YOLOv4 for object detection? Give it a try in this [Google Colab](https://colab.research.google.com/github/hafidh561/yolo-inference-opencv/blob/main/train_model.ipynb)
+If you want make your own YOLOv4 for object detection? Give it a try in this [Google Colab](https://colab.research.google.com/github/hafidh561/yolo-inference-opencv/blob/main/train_model.ipynb). I use face mask dataset for this colab, change your dataset if you want use your own dataset.
 
 ## License
 
