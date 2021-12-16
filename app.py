@@ -1,6 +1,7 @@
 import cv2
 import argparse
 import mimetypes
+from uuid import uuid4
 from yolo_opencv import YoloOpenCV
 
 
@@ -202,7 +203,7 @@ elif detect_object_file == "video":
         exit()
 
 elif detect_object_file == "webcam":
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(2)
     cap.set(3, OUTPUT_SIZE_WIDTH)
     cap.set(4, OUTPUT_SIZE_HEIGHT)
     print("Predict process....")
@@ -210,9 +211,9 @@ elif detect_object_file == "webcam":
         _, img = cap.read()
         img = yolo.predict(img)
         print("Predict success!")
-        cv2.imwrite(f"./results/{real_name_file}", img)
+        cv2.imwrite(f"./results/webcam-{uuid4()}.jpg", img)
         cap.release()
-        print(f"Your file has been saved in /results/{real_name_file}")
+        print(f"Your file has been saved in /results/webcam-{uuid4()}.jpg")
     elif not save_file and show_file:
         print("Predict success!")
         while cap.isOpened():
